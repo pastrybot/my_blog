@@ -21,8 +21,8 @@ test endpoint using PostMan
 
 If it is functional, commit your code
 
-Configure MongoDB
-  -install any dependencies(mongo, mongoose)
+###Configure MongoDB
+  -install any dependencies(mongo, mongoose)  via `npm install --save mongoose`
   -add configuration to DB line via:
     -make a new folder named 'config', new file called 'database-connect.js'
       ```var mongoose = require('mongoose');
@@ -40,6 +40,11 @@ Configure MongoDB
   -create article model
   -create routes folder, and 'routes/articles.js' file
   -create endpoints in 'routes/articles' ONE AT A TIME and continually test using postman
+
+  ****** DON'T FORGET! to MOUNT things in your app.js
+  `app.use('/api/articles', articleRoutes);`
+  *********
+
   -Once they ALL work!
     -`git add -A`
     -`git commit -m "message"`

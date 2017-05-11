@@ -4,8 +4,12 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var Article = require('./models/article');
+var articleRoutes = require('./routes/articles');
 
 require('./config/database-connect')();
+
+
 
 var app = express();
 
@@ -17,6 +21,8 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
+
+app.use('/api/articles', articleRoutes);
 
 app.get('/test', function (req, res){
   res.json({message: "App is barely functioning"})
