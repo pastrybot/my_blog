@@ -1,12 +1,11 @@
-var express = require('express');
-var Router = express.Router();
-var Article = require('../models/article');
+
+var Article = require('../../models/article');
 var async = require('async');
 
 
 
-Router.route('/')
-  .get(function(req, res) {
+exports.getAll = (req, res) => {
+  //exports to our index
     Article.find(function(err, data) {
       if (err) {
         res.send(err)
@@ -17,9 +16,10 @@ Router.route('/')
         });
       }
     });
-  });
-Router.route('/')
-  .post(function(req, res){
+
+}
+exports.makeNew = (req, res) => {
+
       var newArticle = new Article();
       console.log(req.body)
       newArticle.loadData(req.body);
@@ -28,10 +28,11 @@ Router.route('/')
         res.json(na)
       });
 
-  });
 
-Router.route('/:article_id')
-  .get(function(req, res){
+}
+
+exports.getById = (req, res) => {
+
     Article.findById(req.params.article_id, function(err, data){
       if (err){
         console.log(err);
@@ -39,11 +40,11 @@ Router.route('/:article_id')
         res.json(data);
       }
     })
-  });
 
-Router.route('/:article_id')
-  .put(function (req, res) {
-      Article.findById( req.params.article_id, function (err, article) {
+}
+
+exports.edit = (req, res) => {
+    Article.findById( req.params.article_id, function (err, article) {
         if (!article) return res.status(404);
         article.loadData(req.body);
         article.save(function(e) {
@@ -54,10 +55,9 @@ Router.route('/:article_id')
           }
         })
       })
-    })
+    }
 
-Router.route('/:article_id')
-  .delete(function(req, res){
+exports.remove = (req, res) => {
     Article.remove({
       _id: req.params.superhero_id
     }, function(err){
@@ -67,10 +67,4 @@ Router.route('/:article_id')
         res.send('Article Deleted!')
       }
     })
-  })
-
-
-
-
-
-  module.exports = Router;
+}

@@ -48,7 +48,29 @@ If it is functional, commit your code
   -Once they ALL work!
     -`git add -A`
     -`git commit -m "message"`
-    -`git push origin articles` -> pushes it to new branch
+    -`git push origin Articles` -> pushes it to new branch
     -`git checkout master`
-    -`git merge articles` -> brings new code into articles
-    -`git push origin master` -> syncs master branhc with new code
+    -`git merge Articles` -> brings new code into articles
+    -`git push origin master` -> syncs master branch with new code
+
+Create a new folder to hold the routes folder.
+Index.js makes it easier to add routes. Makes it easier to have user types.
+changed routes from 'router.route' to exports.'name'
+ removed our app.use with our 'api/routes' etc. and changed it to routes(app);(app.js 25:00)
+
+ Testing:
+Use Mocha, Chai, & chai-http to run your test suite. In order to have a seperate DB for testing purposes, add this script to your `package.json`
+`    "test": "NODE_ENV=test mocha --no-deprecation --sort --colors --inline-diffs --bail"
+`
+####phase two:
+we are going to use 'custom react scripts' to bootstrao our react app( in the past we have used create-react-app) this will give us a bit more control over our configuration
+
+[custom-react-scripts](https://www.npmjs.com/package/react-scripts/custom)
+'npm install -g create-react-app'
+then we will cut out the extra stuff, and reconfigure the directory to our liking
+`cd client`
+`npm start`
+then `npm run eject` to make your webpack work
+ once you have a new 'client' folder in your project, make sure to delete from 'src', everything but App.css, App.js, and index.js
+
+ add react router into your client folder with: `npm install --save react-router@3`

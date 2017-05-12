@@ -1,6 +1,14 @@
 var mongoose = require('mongoose');
+require('dotenv').config()
+
 
 module.exports = () => {
-  mongoose.connect('mongodb://localhost/my_blog');
-  console.log('Database running')
+  if (process.env.NODE_ENV === 'test' ) {
+    mongoose.connect("mongodb://localhost/test-pt-blog");
+    console.log("📁 📂 🗄 TEST DATABASE OPERATIONAL 🗄 📂 📁");
+  } else {
+    mongoose.connect("mongodb://localhost/my_blog")
+    console.log("📁 📂 🗄 DEV DATABASE OPERATIONAL 🗄 📂 📁");
+  }
+
 }
