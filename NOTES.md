@@ -74,3 +74,28 @@ then `npm run eject` to make your webpack work
  once you have a new 'client' folder in your project, make sure to delete from 'src', everything but App.css, App.js, and index.js
 
  add react router into your client folder with: `npm install --save react-router@3`
+ Create the `about page`
+ You will need a ‘smart’ and a ‘dumb’ component
+ Don’t forget to export each one using the ‘index.js’ pages.
+ Lastly, define a route to serve this component
+ *make new branch for about step --`git checkout -b about` will create the about branch, and switch you into it
+
+`git checkout about` then `git checkout about` will create the branch, then the second command will switch you to it
+
+[8:34]
+Once in your branch - Do you code for the about - once functional push your code to the about branch
+`git add -A`
+`git commit -m 'made about page'`
+`git push origin about` -> important part!
+`git checkout master`
+`git merge about` -> brings your code from about into master
+`git push origin master` -> push all new code to github*
+
+Blog Post: components
+ArticleList-
+  articlePanel
+PostArticle -
+
+EditArticle
+ViewArticle}
+each one will need a container and a component~!

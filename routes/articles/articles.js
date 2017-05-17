@@ -59,7 +59,7 @@ exports.edit = (req, res) => {
 
 exports.remove = (req, res) => {
     Article.remove({
-      _id: req.params.superhero_id
+      _id: req.params.article_id
     }, function(err){
       if(err){
         console.log(err)
