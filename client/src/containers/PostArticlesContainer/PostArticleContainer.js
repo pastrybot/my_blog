@@ -1,6 +1,6 @@
-PostArticleContainer:
+//PostArticleContainer:
 import React, { Component } from 'react';
-import PostArticleForm from './PostArticleForm';
+import {PostArticleForm} from '../../components';
 import $ from "jquery";
 import {browserHistory} from "react-router";
 class PostArticleContainer extends Component {
@@ -47,7 +47,7 @@ class PostArticleContainer extends Component {
           updateAuthor={this.updateAuthor}
           updateImg={this.updateImg}
           updateCategory={this.updateCategory}
-          updateContnent={this.updateContent}/>
+          updateContent={this.updateContent}/>
       </div>
     )
   }

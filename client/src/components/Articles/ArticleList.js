@@ -8,9 +8,9 @@ const ArticleList = (props) => {
    <h1 className="title">Bob Lawblaws Law Blog</h1>
       <div className="blog-flex">
 
-        { props.heroes.map((item, index) => {
+        { props.articles.map((item, index) => {
             return (
-            <div className='blog-panel'>
+            <div key={index} className='blog-panel'>
                <h2 className='blog-title'>{ item.title }</h2>
                 <ul className='blog-text'>
                   <li>{ item.category }</li>

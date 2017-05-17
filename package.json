@@ -4,21 +4,23 @@
   "private": true,
   "scripts": {
     "start": "nodemon ./bin/www",
-    "test": "NODE_ENV=test mocha --no-deprecation --sort --colors --inline-diffs --bail"
+    "test": "NODE_ENV=test mocha --no-deprecation --sort --colors --inline-diffs --bail",
+    "dev": "nf start -p 3000 --procfile Procfile.dev"
   },
   "dependencies": {
     "body-parser": "~1.16.0",
+    "bootstrap": "^3.3.7",
     "chai": "^3.5.0",
     "chai-http": "^3.0.0",
     "cookie-parser": "~1.4.3",
     "debug": "~2.6.0",
     "dotenv": "^4.0.0",
     "express": "~4.14.1",
+    "foreman": "^2.0.0",
+    "jquery": "^3.2.1",
     "mocha": "^3.3.0",
     "mongoose": "^4.9.8",
     "morgan": "~1.7.0",
     "serve-favicon": "~2.3.2"
-
   }
-
 }

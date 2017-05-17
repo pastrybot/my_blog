@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import $ from 'jquery';
-import ArticleList from './ArticleList';
-//stateless function that displays a list of heroes
+import {ArticleList} from '../../components';
+//stateless function that displays blog articles
 
 class ArticlesContainer extends Component {
 
@@ -10,9 +10,9 @@ class ArticlesContainer extends Component {
     newArticle: undefined
   }
 
- componentDidMount= () => this.loadArticle()
+ componentDidMount= () => this.loadArticles()
 
-  loadHeroes(){
+  loadArticles(){
     $.ajax({
       url: '/api/articles',
       method: 'GET'
@@ -27,7 +27,7 @@ class ArticlesContainer extends Component {
       <div>
 
         { this.state.articles ?
-          <ArticleList heroes={this.state.articles}/>
+          <ArticleList articles={this.state.articles}/>
           : <h5>loading...</h5>
         }
 

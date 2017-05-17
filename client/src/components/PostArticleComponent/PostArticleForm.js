@@ -11,7 +11,7 @@ const PostArticleForm = (props) => {
             onChange={(event) => props.updateTitle(event)}/>
         </div>
         <div className="form-group">
-          <label className="label" for="img">Project Image:</label>
+          <label className="label" for="img">Image:</label>
           <input type= "text" placeholder="Enter URL"
             onChange={(event) => props.updateImg(event)}/>
         </div>
@@ -24,6 +24,11 @@ const PostArticleForm = (props) => {
           <label className="label" for="author">Author:</label>
           <input type= "text" placeholder="Author"
             onChange={(event) => props.updateAuthor(event)}/>
+        </div>
+        <div className="form-group">
+          <label className="label" for="content">Content here:</label>
+          <input type= "text" placeholder="Content"
+            onChange={(event) => props.updateContent(event)}/>
         </div>
           <button type="submit" className="post-submit">Post</button>
       </form>
