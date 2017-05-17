@@ -12,11 +12,13 @@ class EditArticleContainer extends Component {
     author: undefined,
     img: undefined
   }
+
   updateField  = this.updateField.bind(this);
   componentDidMount = () => this.loadArticles()
   updateField(fieldName, fieldValue) {
     const newState = {};
     newState[fieldName] = fieldValue;
+    console.log('testing')
     this.setState(newState);
   }
   loadArticles(){

@@ -6,27 +6,27 @@ const PostArticleForm = (props) => {
       <form className="form" onSubmit={(event) => props.handleSubmit(event)}>
       <h1 className="form-header">Blog Posts</h1>
         <div className="form-group">
-          <label className="label" for="title">Title:</label>
+          <label className="label">Title:</label>
           <input type="text" placeholder="Title"
             onChange={(event) => props.updateTitle(event)}/>
         </div>
         <div className="form-group">
-          <label className="label" for="img">Image:</label>
+          <label className="label">Image:</label>
           <input type="text" placeholder="Enter URL"
             onChange={(event) => props.updateImg(event)}/>
         </div>
         <div className="form-group">
-          <label className="label" for="category">Category:</label>
+          <label className="label">Category:</label>
           <input type="text" placeholder="Category"
             onChange={(event) => props.updateCategory(event)}/>
         </div>
         <div className="form-group">
-          <label className="label" for="author">Author:</label>
+          <label className="label">Author:</label>
           <input type="text" placeholder="Author"
             onChange={(event) => props.updateAuthor(event)}/>
         </div>
         <div className="form-group">
-          <label className="label" for="content">Content here:</label>
+          <label className="label">Content here:</label>
           <input type="text" placeholder="Content"
             onChange={(event) => props.updateContent(event)}/>
         </div>

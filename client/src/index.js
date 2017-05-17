@@ -15,7 +15,7 @@ ReactDOM.render(
       <Route path="/about" component={AboutContainer} />
       <Route path="/articles" component={ArticlesContainer} />
       <Route path="/newPost" component={PostArticleContainer} />
-      <Route path="/editPost" compontnet={EditArticleContainer} />
+      <Route path="/editPost/:article_id" component={EditArticleContainer} />
       <IndexRoute component={HomeContainer} />
     </Route>
   </Router>,
