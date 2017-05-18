@@ -18,6 +18,8 @@ exports.getAll = (req, res) => {
     });
 
 }
+
+//this constructor uses our schema to actually make the data
 exports.makeNew = (req, res) => {
 
       var newArticle = new Article();

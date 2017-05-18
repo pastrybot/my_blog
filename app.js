@@ -1,3 +1,4 @@
+require('dotenv').config();
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
@@ -7,8 +8,14 @@ var bodyParser = require('body-parser');
 var Article = require('./models/article');
 var routes = require('./routes/index');
 
+//this is where we are just importing a simple function
 require('./config/database-connect')();
 
+//never push this to github!
+
+if(process.env.SEED_DATABASE === 'true'){
+  require('./config/database-seeder')();
+}
 
 
 var app = express();
