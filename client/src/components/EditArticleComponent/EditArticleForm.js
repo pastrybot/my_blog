@@ -31,7 +31,7 @@ const EditArticleForm = (props) => {
             onChange={(event) => props.updateField("Content", event.target.value)}/>
         </div>
           <button onClick={(event) => props.updateArticle(event)} className="btn btn-default">Update Article +</button>
-          <button onClick={(event) => props.removeArticle(event)} className="btn btn-default">Delete Article -</button>
+          <button onClick={(event) => props.deleteById(event)} className="btn btn-default">Delete Article -</button>
 
           <button type="submit" className="edit-button">Post Edits</button>
       </form>

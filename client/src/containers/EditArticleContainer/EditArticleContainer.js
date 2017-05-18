@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {EditArticleForm} from '../../components';
 import $ from "jquery";
+import {browserHistory} from 'react-router'
 
 
 class EditArticleContainer extends Component {
@@ -50,21 +51,21 @@ class EditArticleContainer extends Component {
       url: `/api/articles/${this.props.params.article_id}`,
       method: "PUT",
       data: data
-    }).done(response => {
-      console.log(response);
-    })}
+    }).done((response) => browserHistory.push("/articles"))
+      }
     updateTitle = (event) => this.setState({title: event.target.value})
     updateImg = (event) => this.setState({img: event.target.value})
     updateContent = (event) => this.setState({content: event.target.value})
     updateCategory = (event) => this.setState({category: event.target.value})
     updateAuthor = (event) => this.setState({author: event.target.value})
-    updateContent(event){
+
+  deleteById = this.deleteById.bind(this)
+  deleteById(event){
     event.preventDefault();
-    const tempArray = [];
-    tempArray.push(this.state.newArticle);
-    this.setState({ content: tempArray});
-    this.setState({ newArticle: ''});
-    console.log(this.state.newArticle);
+    $.ajax({
+      url: `/api/articles/${this.props.params.article_id}`,
+      method: "DELETE"
+    }).done((response) => browserHistory.push("/articles"))
   }
 
   render() {
@@ -80,7 +81,8 @@ class EditArticleContainer extends Component {
                         content={this.state.content}
                         updateContent={(event) => this.updateContent(event)}
                         category={this.state.category}
-                        img={this.state.img} />
+                        img={this.state.img}
+                        deleteById={this.deleteById}/>
                         : <h3> Still Thinking... </h3>
         }
         </div>

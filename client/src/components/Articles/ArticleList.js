@@ -16,7 +16,7 @@ const ArticleList = (props) => {
                   <li>{ item.category }</li>
                   <li>{ item.author }</li>
                   <li>{ item.content }</li>
-                  <li>{ item.img }</li>
+                  <img src={ item.img }/>
                 </ul>
                 <Link className="btn btn-warning" to={`/editPost/${item._id}`}>Edit</Link>
             </div>
