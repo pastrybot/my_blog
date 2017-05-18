@@ -18,7 +18,7 @@ const ArticleList = (props) => {
                   <li>{ item.content }</li>
                   <li>{ item.img }</li>
                 </ul>
-                <Link className="btn btn-warning" to={`/editPost/:article_id`}>Edit</Link>
+                <Link className="btn btn-warning" to={`/editPost/${item._id}`}>Edit</Link>
             </div>
             )
           }
