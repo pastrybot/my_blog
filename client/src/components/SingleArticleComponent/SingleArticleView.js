@@ -18,6 +18,7 @@ const SingleArticleView = (props) => {
                   <li>{ props.content }</li>
                 </ul>
                 <Link className="btn btn-warning" to={`/editPost/${props.id}`}>Edit</Link>
+                <Link className="btn btn-primary" to={`/articles`}>Back to blog</Link>
             </div>
 
         }

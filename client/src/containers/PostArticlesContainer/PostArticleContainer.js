@@ -11,8 +11,30 @@ class PostArticleContainer extends Component {
     content: undefined,
     category: undefined,
     author: undefined,
-    img: undefined
+    img: undefined,
+    valid: false
   }
+  updateField(name, value){
+    const newState = {};
+    newState[name]=value;
+    this.setState(newState);
+  }
+  
+  onChange = this.onChange.bind(this);
+  onChange(name, value){
+    this.updateField(name, value);
+    this.validate();
+
+  }
+  validate(){
+    this.setState({
+      valid: (this.state.title !== undefined ) && (this.state.content !== undefined) && (this.state.category !== undefined) && (this.state.author !== undefined) && (this.state.img !== undefined)
+    })
+
+
+
+  }
+
   handleSubmit = this.handleSubmit.bind(this)
   handleSubmit(event) {
     event.preventDefault()
@@ -36,20 +58,15 @@ class PostArticleContainer extends Component {
   }).done((response) =>
     browserHistory.push('/Articles'))
   }
-  updateTitle = (event) => this.setState({title: event.target.value})
-  updateImg = (event) => this.setState({img: event.target.value})
-  updateCategory = (event) => this.setState({category: event.target.value})
-  updateContent = (event) => this.setState({content: event.target.value})
-  updateAuthor = (event) => this.setState({author: event.target.value})
+
   render() {
     return (
       <div>
-        <PostArticleForm handleSubmit={ this.handleSubmit }
-          updateTitle={this.updateTitle}
-          updateAuthor={this.updateAuthor}
-          updateImg={this.updateImg}
-          updateCategory={this.updateCategory}
-          updateContent={this.updateContent}/>
+        <PostArticleForm
+        handleSubmit={ this.handleSubmit }
+        onChange={ this.onChange }
+        valid={ this.state.valid }
+          />
       </div>
     )
   }

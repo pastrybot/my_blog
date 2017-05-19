@@ -8,29 +8,29 @@ const PostArticleForm = (props) => {
         <div className="form-group">
           <label className="label">Title:</label>
           <input type="text" placeholder="Title"
-            onChange={(event) => props.updateTitle(event)}/>
+            onChange={(event) => props.onChange("title", event.target.value)}/>
         </div>
         <div className="form-group">
           <label className="label">Image:</label>
           <input type="text" placeholder="Enter URL"
-            onChange={(event) => props.updateImg(event)}/>
+            onChange={(event) => props.onChange("img", event.target.value)}/>
         </div>
         <div className="form-group">
           <label className="label">Category:</label>
           <input type="text" placeholder="Category"
-            onChange={(event) => props.updateCategory(event)}/>
+            onChange={(event) => props.onChange("category", event.target.value)}/>
         </div>
         <div className="form-group">
           <label className="label">Author:</label>
           <input type="text" placeholder="Author"
-            onChange={(event) => props.updateAuthor(event)}/>
+            onChange={(event) => props.onChange("author", event.target.value)}/>
         </div>
         <div className="form-group">
           <label className="label">Content here:</label>
           <input type="text" placeholder="Content"
-            onChange={(event) => props.updateContent(event)}/>
+            onChange={(event) => props.onChange("content", event.target.value)}/>
         </div>
-          <button type="submit" className="post-submit">Post</button>
+          <button disabled={!props.valid} type="submit" className="btn btn-default">Post</button>
       </form>
     </div>
   )
