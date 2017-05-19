@@ -12,13 +12,17 @@ class ArticlesContainer extends Component {
 
  componentDidMount= () => this.loadArticles()
 
+
   loadArticles(){
     $.ajax({
       url: '/api/articles',
       method: 'GET'
     }).done((response) => {
+      let articles = response.data.reverse();
+       //reverses our array of articles,
+       //to put the newest addition at the top of the list
       console.log(response, "I am data");
-      this.setState({ articles: response.data })
+      this.setState({ articles: articles })
     })
 
   }

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {EditArticleForm} from '../../components';
 import $ from "jquery";
-import {browserHistory} from 'react-router'
+import {browserHistory} from 'react-router';
 
 
 class EditArticleContainer extends Component {
@@ -15,13 +15,16 @@ class EditArticleContainer extends Component {
   }
 
   updateField  = this.updateField.bind(this);
-  componentDidMount = () => this.loadArticles()
+
   updateField(fieldName, fieldValue) {
     const newState = {};
     newState[fieldName] = fieldValue;
     console.log('testing')
     this.setState(newState);
   }
+
+  componentDidMount = () => this.loadArticles()
+
   loadArticles(){
       $.ajax({
         url: `/api/articles/${this.props.params.article_id}`,
@@ -35,6 +38,7 @@ class EditArticleContainer extends Component {
                         img: data.img,
                         isFetching: false
         })
+        console.log(data.title, "article title")
       })
     }
     handleSubmit = this.handleSubmit.bind(this)
@@ -53,6 +57,7 @@ class EditArticleContainer extends Component {
       data: data
     }).done((response) => browserHistory.push("/articles"))
       }
+
     updateTitle = (event) => this.setState({title: event.target.value})
     updateImg = (event) => this.setState({img: event.target.value})
     updateContent = (event) => this.setState({content: event.target.value})
@@ -79,6 +84,7 @@ class EditArticleContainer extends Component {
                         updateField={this.updateField}
                         title={this.state.title}
                         content={this.state.content}
+                        author={this.state.author}
                         updateContent={(event) => this.updateContent(event)}
                         category={this.state.category}
                         img={this.state.img}
