@@ -1,4 +1,4 @@
-
+var Comment = require('../../models/comment')
 var Article = require('../../models/article');
 var async = require('async');
 
@@ -6,18 +6,15 @@ var async = require('async');
 
 exports.getAll = (req, res) => {
   //exports to our index
-    Article.find(function(err, data) {
-      if (err) {
-        res.send(err)
-      } else {
-        res.json({
-          message: 'Found your article',
-          data
-        });
-      }
-    });
+    Article.find()
+    .populate('comments')
+    .exec((err, data) => {
+      if(err) throw err;
+      res.send({data})
+    })
+  };
 
-}
+
 
 //this constructor uses our schema to actually make the data
 exports.makeNew = (req, res) => {
@@ -35,15 +32,15 @@ exports.makeNew = (req, res) => {
 
 exports.getById = (req, res) => {
 
-    Article.findById(req.params.article_id, function(err, data){
-      if (err){
-        console.log(err);
-      }else{
-        res.json(data);
-      }
-    })
+    Article.findById(req.params.article_id)
+    .populate('comments')
+    .exec((err, data) => {
+       if (err) throw err;
+        res.send(data);
+      })
+    }
 
-}
+
 
 exports.edit = (req, res) => {
     Article.findById( req.params.article_id, function (err, article) {
@@ -70,3 +67,22 @@ exports.remove = (req, res) => {
       }
     })
 }
+
+//find article by id, upon success create a new comment,
+// save new comment, then take newly made comment and shove him into article.comment
+//then save article
+exports.makeComment = (req, res) => {
+  Article.findById(req.params.article_id, (err, article) => {
+      if(err) throw err;
+      const newComment = new Comment();
+      newComment.loadData(req.body);
+      newComment.save((err, savedComment) => {
+        if (err) throw err;
+        article.comments.push(savedComment);
+        article.save((err, savedArticle) => {
+          if(err) throw err;
+          res.send({data: savedArticle})
+        })
+      })
+    })
+  }

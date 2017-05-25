@@ -5,7 +5,8 @@ var ArticleSchema = new mongoose.Schema({
   category: String,
   author: String,
   content: String,
-  img: String
+  img: String,
+  comments: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Comment'}]
 
 });
 

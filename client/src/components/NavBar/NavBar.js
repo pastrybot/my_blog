@@ -10,7 +10,7 @@ const NavBar = () => {
 						<ul>
 							<li><a href="/">Home</a></li>
 							<li>Blog
-								<ul class="dropdown">
+								<ul className="dropdown">
 									<li><a href="/articles">All Posts</a></li>
 									<li><a href="/newPost">New Blog Post</a></li>
 									<li><a href="#">Dropdown Option here</a></li>

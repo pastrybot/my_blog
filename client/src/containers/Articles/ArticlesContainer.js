@@ -7,7 +7,8 @@ class ArticlesContainer extends Component {
 
   state = {
     articles: undefined,
-    newArticle: undefined
+    newArticle: undefined,
+    text: undefined
   }
 
  componentDidMount= () => this.loadArticles()
@@ -24,14 +25,32 @@ class ArticlesContainer extends Component {
       console.log(response, "I am data");
       this.setState({ articles: articles })
     })
-
   }
+
+  updateText = (event) => this.setState({ text: event.target.value })
+
+  submitNote = this.submitNote.bind(this)
+
+  submitNote(event, _id){
+    event.preventDefault();
+    let note = {content: this.state.text}
+    $.ajax({
+      url:  `/api/articles/note/${_id}`,
+      method: 'POST',
+      data: note
+    }).done((response) => this.loadArticles())
+  }
+
+
   render() {
     return (
       <div>
 
         { this.state.articles ?
-          <ArticleList articles={this.state.articles}/>
+          <ArticleList articles={this.state.articles}
+                       updateText={this.updateText}
+                       submitNote={this.submitNote}
+                      />
           : <h5>loading...</h5>
         }
 
