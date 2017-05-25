@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router';
-import $ from 'jquery';
+
 
 const SingleArticleView = (props) => {
   return (
@@ -14,7 +14,7 @@ const SingleArticleView = (props) => {
                 <ul className='blog-text'>
                   <li>{ props.author }</li>
                   <li>{ props.category }</li>
-                  <img src={ props.img }/>
+                  <img src={ props.img } alt='error'/>
                   <li>{ props.content }</li>
                 </ul>
                 <Link className="btn btn-warning" to={`/editPost/${props.id}`}>Edit</Link>

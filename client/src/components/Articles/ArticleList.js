@@ -17,10 +17,10 @@ const ArticleList = (props) => {
                   <li>{ item.category }</li>
                   <li>{ item.author }</li>
                   <li>{ item.content }</li>
-                  <img src={ item.img }/>
+                  <img src={ item.img } alt='could not render'/>
                 </ul>
 
-                <Link className="btn btn-warning" to={`/editPost/${item._id}`}>Edit</Link>
+                <Link className="btn btn-warning" to={`/articles/editPost/${item._id}`}>Edit</Link>
                 {/* the ${item._id} is how you pass the item by id to the url. */}
             </div>
             )

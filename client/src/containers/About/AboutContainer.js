@@ -6,7 +6,7 @@ class AboutContainer extends Component {
   render() {
     return(
     <div>
-      <About />
+      <About> </About>
     </div>
     )
   }

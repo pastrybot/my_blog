@@ -1,37 +1,31 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-const NavBar = React.createClass({
-	render: function() {
+const NavBar = () => {
+
 		return (
 			<nav>
 				<div className="navWide">
 					<div className="wideDiv">
-						<a href="/">Home</a>
-						<a href="/articles">Blog</a>
-						<a href="/about">About</a>
-					</div>
-				</div>
-				<div className="navNarrow">
-					<i className="fa fa-bars fa-2x" onClick={this.burgerToggle}></i>
-					<div className="narrowLinks">
-						<a href="#" onClick={this.burgerToggle}>Link 1</a>
-						<a href="#" onClick={this.burgerToggle}>Link 2</a>
-						<a href="#" onClick={this.burgerToggle}>Link 3</a>
+						<ul>
+							<li><a href="/">Home</a></li>
+							<li>Blog
+								<ul class="dropdown">
+									<li><a href="/articles">All Posts</a></li>
+									<li><a href="/newPost">New Blog Post</a></li>
+									<li><a href="#">Dropdown Option here</a></li>
+								</ul>
+							</li>
+							<li><a href="/about">About</a></li>
+							<li><a href="#">Contact Us</a></li>
+						</ul>
 					</div>
 				</div>
 			</nav>
 		);
-	},
-	burgerToggle: function() {
-		let linksEl = document.querySelector('.narrowLinks');
-		if (linksEl.style.display === 'block') {
-			linksEl.style.display = 'none';
-		} else {
-			linksEl.style.display = 'block';
-		}
-	}
-});
+
+};
+
 
 ReactDOM.render(<NavBar />, document.querySelector('navbar'));
 
