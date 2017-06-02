@@ -1,63 +1,44 @@
 import React, { Component } from 'react';
 import $ from 'jquery';
-import{SingleArticleView} from '../../components';
+import {SingleArticleView} from '../../components';
 
 
 class SingleArticleContainer extends Component {
 
-  state= {
-    isFetching: true,
-    title: undefined,
-    author: undefined,
-    category: undefined,
-    content: undefined,
-    img: undefined,
-    id: undefined
-  }
+  state = {
+    article: undefined,
+    buttonColor: false
+    }
+   loadArticle = this.loadArticle.bind(this)
+   componentDidMount = () => this.loadArticle()
+   toggleColor = () => this.setState({buttonColor: !this.state.buttonColor})
 
-  componentDidMount = () => this.loadArticles()
-
-  loadArticles(){
+  loadArticle(){
     $.ajax({
       url: `/api/articles/${this.props.params.article_id}`,
       method: "GET"
-    }).done(data => {
-      console.log(data.title, 'Article Name')
-      this.setState({
-                  title: data.title,
-                  content: data.content,
-                  category: data.category,
-                  author: data.author,
-                  img: data.img,
-                  id: data._id,
-                  isFetching: false
+    }).done((response) => {
+       console.log(response, "new comment")
+       this.setState({article: response})
       })
-      console.log(data.title, 'article title')
-    })
-  }
+    }
 
-  render(){
-    return(
-      <div>
-        <div>
-          <h3> { this.props.params.article_id }</h3>
-            {!this.state.isFetching ?
-                <SingleArticleView
-                  title={this.state.title}
-                  content={this.state.content}
-                  author={this.state.author}
-                  category={this.state.category}
-                  img={this.state.img}
-                  id={this.state.id}
-                  />
-                  : <h5> Finding Article...</h5>
-            }
-            </div>
-        </div>
 
-    )
-  }
-}
+    render() {
+       console.log("finding nemo ", this.state.article);
+       return (
+         <div className="article-container">
+           { this.state.article
+             ? <SingleArticleView
+             toggleColor={this.toggleColor}
+             buttonColor={this.state.buttonColor}
+             article={this.state.article}/>
+             : <h5>loading...</h5> }
+         </div>
+       );
+      }
+    }
+
 
 
 export default SingleArticleContainer;

@@ -1,0 +1,125 @@
+body {
+  background-img: url(http://www.wildtextures.com/wp-content/uploads/wildtextures-old_book_cloth_cover.jpg);
+  background-size: cover;
+}
+
+.listFlex {
+  box-shadow: 0 1px 2px rgba(0,39,36,0.1);
+  border-radius: 3px;
+  display: flex;
+  justify-content: space-around;
+  width: auto;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.articlePanel{
+  background-color: #f4f4f4;
+  background-size: cover;
+  border: 1px solid #949494;
+  width: 85%;
+  margin-top: 15px;
+  padding: 20px;
+  text-align: left;
+  box-shadow: 1px 1px 7px #8c8c8c;
+}
+
+
+.articleTitle{
+  font-family: "ff-ernestine-web-pro";
+  font-size: 24px;
+  font-weight: bolder;
+  text-align: left;
+  color: #ff740f;
+  margin-bottom: 20px;
+  margin-top: 18px;
+}
+
+.image {
+  box-shadow: 1px 2px 12px 0 rgba(0, 0, 0, 0.1);
+  width: 350px;
+  height: 233px;
+  float: right;
+  background-size: cover;
+  background-position: center center;
+}
+
+.content {
+  font-family: "pragmatica",sans-serif;
+  font-size: 13px;
+  padding: 0px 0px 10px 5px;
+  display: block;
+  color: #484849;
+}
+
+.author {
+  font-family: "ff-ernestine-web-pro" strong;
+  font-size: 12px;
+  padding: 0px 0px 10px 5px;
+  display: block;
+  color: #1a1a1a;
+}
+
+ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.category {
+  font-family: "ff-ernestine-web-pro" strong;
+  font-size: 16px;
+  padding: 0px 0px 10px 5px;
+  display: block;
+  color: #223388;
+}
+
+.myBts {
+  display: block;
+  padding: 20px;
+  margin: 10px;
+  float: right;
+}
+
+.myBtn {
+  -moz-box-shadow:inset 0px 1px 0px -45px #ffffff;
+	-webkit-box-shadow:inset 0px 1px 0px -45px #ffffff;
+	box-shadow:inset 0px 1px 0px -45px #ffffff;
+	background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #ededed), color-stop(1, #cccccc));
+	background:-moz-linear-gradient(top, #ededed 5%, #cccccc 100%);
+	background:-webkit-linear-gradient(top, #ededed 5%, #cccccc 100%);
+	background:-o-linear-gradient(top, #ededed 5%, #cccccc 100%);
+	background:-ms-linear-gradient(top, #ededed 5%, #cccccc 100%);
+	background:linear-gradient(to bottom, #ededed 5%, #cccccc 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ededed', endColorstr='#cccccc',GradientType=0);
+	background-color:#ededed;
+	-moz-border-radius:6px;
+	-webkit-border-radius:6px;
+	border-radius:6px;
+	border:1px solid #d1d1d1;
+	display:inline-block;
+	cursor:pointer;
+	color:#777777;
+	font-family:Arial;
+	font-size:11px;
+	font-weight:bold;
+	padding:5px 18px;
+	text-decoration:none;
+	text-shadow:0px 0px 0px #ffffff;
+
+}
+
+.myBtn:hover {
+  background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #cccccc), color-stop(1, #ededed));
+	background:-moz-linear-gradient(top, #cccccc 5%, #ededed 100%);
+	background:-webkit-linear-gradient(top, #cccccc 5%, #ededed 100%);
+	background:-o-linear-gradient(top, #cccccc 5%, #ededed 100%);
+	background:-ms-linear-gradient(top, #cccccc 5%, #ededed 100%);
+	background:linear-gradient(to bottom, #cccccc 5%, #ededed 100%);
+	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#cccccc', endColorstr='#ededed',GradientType=0);
+	background-color:#cccccc;
+}
+
+.myBtn:active {
+  position:relative;
+	top:1px;
+}

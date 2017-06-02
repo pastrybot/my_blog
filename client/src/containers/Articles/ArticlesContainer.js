@@ -11,6 +11,8 @@ class ArticlesContainer extends Component {
     text: undefined
   }
 
+ loadArticles = this.loadArticles.bind(this)
+ submitComment = this.submitComment.bind(this)
  componentDidMount= () => this.loadArticles()
 
 
@@ -29,13 +31,13 @@ class ArticlesContainer extends Component {
 
   updateText = (event) => this.setState({ text: event.target.value })
 
-  submitNote = this.submitNote.bind(this)
 
-  submitNote(event, _id){
+
+  submitComment(event, _id){
     event.preventDefault();
     let note = {content: this.state.text}
     $.ajax({
-      url:  `/api/articles/note/${_id}`,
+      url:  `/api/articles/comment/${_id}`,
       method: 'POST',
       data: note
     }).done((response) => this.loadArticles())
@@ -49,7 +51,7 @@ class ArticlesContainer extends Component {
         { this.state.articles ?
           <ArticleList articles={this.state.articles}
                        updateText={this.updateText}
-                       submitNote={this.submitNote}
+                       submitComment={this.submitComment}
                       />
           : <h5>loading...</h5>
         }

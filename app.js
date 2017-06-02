@@ -7,15 +7,18 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var Article = require('./models/article');
 var routes = require('./routes/index');
+var session = require('express-session');
+var passport = require('passport');
+var auth = require('./routes/auth');
 
 //this is where we are just importing a simple function
 require('./config/database-connect')();
 
 //never push this to github!
 //this is where we seed the database with fake data
-// if(process.env.SEED_DATABASE === 'true'){
-//   require('./config/database-seeder')();
-// }
+if(process.env.SEED_DATABASE === 'true'){
+  require('./config/database-seeder')();
+}
 
 
 var app = express();
@@ -28,6 +31,19 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
+
+app.use(session({
+ secret: 'blahblahblah'
+})); // session secret
+app.use(passport.initialize());
+app.use(passport.session()); // persistent login sessions
+app.use(session({
+ cookie: {
+   maxAge: 60000
+ }
+}));
+require('./config/passport')(passport); // pass passport for configuration
+require('./routes/auth')(app, passport); // load our routes and pass in our app and fully configured passport
 
 routes(app);
 
