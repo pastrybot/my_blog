@@ -2,6 +2,7 @@ import React from 'react';
 import {Link} from 'react-router';
 import CommentList from '../CommentList/CommentList'
 import {PostCommentContainer} from '../../containers';
+import {myBtn} from "./styles.css";
 
 
 
@@ -23,9 +24,9 @@ const SingleArticleView = (props) => {
              <div>
                <PostCommentContainer id={props.article._id} />
              </div>
-             <Link className='btn btn-danger' to={`/articles/editPost/${props.article.id}`}>Edit</Link>
+             <Link className={myBtn} to={`/articles/editPost/${props.article._id}`}>Edit this post</Link>
           </div>
-         <CommentList comments={props.article.comments}/>
+
         </div>
 
       </div>

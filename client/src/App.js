@@ -7,7 +7,7 @@ class App extends Component {
     return (
       <div className={container}>
       {this.props.children}
-        <h2>Bloggity blog blog blog</h2>
+        
       </div>
     );
   }

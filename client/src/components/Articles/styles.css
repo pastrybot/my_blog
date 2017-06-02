@@ -1,6 +1,5 @@
 body {
-  background-img: url(http://www.wildtextures.com/wp-content/uploads/wildtextures-old_book_cloth_cover.jpg);
-  background-size: cover;
+    background-size: cover;
 }
 
 .listFlex {
@@ -14,7 +13,7 @@ body {
 }
 
 .articlePanel{
-  background-color: #f4f4f4;
+  background-image: url(http://www.designbolts.com/wp-content/uploads/2013/02/Diamond-Grey-Seamless-Pattern-For-Website-Background.jpg);
   background-size: cover;
   border: 1px solid #949494;
   width: 85%;
@@ -27,10 +26,10 @@ body {
 
 .articleTitle{
   font-family: "ff-ernestine-web-pro";
-  font-size: 24px;
+  font-size: 30px;
   font-weight: bolder;
   text-align: left;
-  color: #ff740f;
+  color:#941b64;
   margin-bottom: 20px;
   margin-top: 18px;
 }
@@ -73,7 +72,7 @@ ol {
   color: #223388;
 }
 
-.myBts {
+.myBtns {
   display: block;
   padding: 20px;
   margin: 10px;

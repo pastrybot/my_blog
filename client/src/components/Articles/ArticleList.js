@@ -1,6 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router';
-import {listFlex, articlePanel, articleTitle, myBtn,
+import {body, listFlex, articlePanel, articleTitle, myBtn,
          image, category, content, author} from './styles.css';
 
 
