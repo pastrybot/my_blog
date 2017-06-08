@@ -1,14 +1,23 @@
 import React from 'react';
-import {largeButton} from './styles.css';
+import {largeButton, carousel, } from './styles.css';
 
 
 const Home = (props) => {
   return (
     <div>
-      <h1> Helllllllllooooo from home component </h1>
-      <button
-      onClick={() => alert('best button ever')}
-      className={largeButton} type='button'>Click me!</button>
+    <h2>something here</h2>
+      <div>
+
+        <ul>
+          <li>{}</li>
+          <li>{}</li>
+        </ul>
+
+
+    </div>
+    <button
+    onClick={() => alert('best button ever')}
+    className={largeButton} type='button'>Click me!</button>
     </div>
   )
 }

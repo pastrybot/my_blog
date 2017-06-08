@@ -3,3 +3,55 @@
   font-size: 23px;
   color: blue;
 }
+
+.carousel{
+  background: #777777;
+  height: 500px;
+  width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+  border: 1px solid #979797;
+}
+
+
+
+
+
+/* BSBF-Featurenew: */
+
+
+/* Feature Article: */
+font-family: AmericanTypewriter;
+font-size: 18px;
+color: #000000;
+
+
+/* Category: */
+font-family: .AppleSystemUIFont;
+font-size: 14px;
+color: #FD9D00;
+
+
+/* By Author: */
+font-family: .AppleSystemUIFont;
+font-size: 14px;
+color: #4D4D4D;
+
+
+/* Read More: */
+font-family: .AppleSystemUIFont;
+font-size: 14px;
+color: #4990E2;
+
+
+/* Comment: */
+font-family: .AppleSystemUIFont;
+font-size: 14px;
+color: #4990E2;
+
+
+/* Content: Lorem ipsum: */
+font-family: .AppleSystemUIFont;
+font-size: 14px;
+color: #363535;

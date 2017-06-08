@@ -3,7 +3,7 @@ import {postForm, postBtn, formHeader, label} from './styles.css';
 
  const PostCommentForm = (props) => {
    return (
-     <div className={PostCommentForm}>
+     <div>
        <form className={postForm} onSubmit={(event) => props.handleSubmit(event)}>
        <h1 className={formHeader}>Leave a comment</h1>
          <div>

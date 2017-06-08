@@ -1,10 +1,11 @@
 import React from 'react';
+import {postForm, postBtn, formHeader} from './styles.css';
 
 const PostArticleForm = (props) => {
   return (
-    <div className="post-form">
-      <form className="form" onSubmit={(event) => props.handleSubmit(event)}>
-      <h1 className="form-header">Blog Posts</h1>
+    <div>
+      <form className={postForm} onSubmit={(event) => props.handleSubmit(event)}>
+      <h1 className={formHeader}>Blog Posts</h1>
         <div className="form-group">
           <label className="label">Title:</label>
           <input type="text" placeholder="Title"
@@ -30,7 +31,7 @@ const PostArticleForm = (props) => {
           <input type="text" placeholder="Content"
             onChange={(event) => props.onChange("content", event.target.value)}/>
         </div>
-          <button disabled={!props.valid} type="submit" className="btn btn-default">Post</button>
+          <button disabled={!props.valid} type="submit" className={postBtn}>Post</button>
       </form>
     </div>
   )

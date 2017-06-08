@@ -1,13 +1,14 @@
 import React from 'react';
 import {Link} from 'react-router';
-import {body, listFlex, articlePanel, articleTitle, myBtn,
+import {carousel, body, listFlex, articlePanel, articleTitle, myBtn,
          image, category, content, author} from './styles.css';
 
 
 const ArticleList = (props) => {
  return (
 <div>
-   <h1 className="title">Bob Lawblaws Law Blog</h1>
+   <h1 className="title"></h1>
+
       <div className={listFlex}>
 
         { props.articles.map((item, index) => {

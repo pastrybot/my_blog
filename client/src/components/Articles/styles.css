@@ -1,7 +1,19 @@
 body {
     background-size: cover;
+    font-family: venera;
 }
-
+h1{
+  text-align: center;
+}
+.carousel{
+  background: #777777;
+  height: 500px;
+  width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px;
+  border: 1px solid #979797;
+}
 .listFlex {
   box-shadow: 0 1px 2px rgba(0,39,36,0.1);
   border-radius: 3px;
@@ -13,7 +25,7 @@ body {
 }
 
 .articlePanel{
-  background-image: url(http://www.designbolts.com/wp-content/uploads/2013/02/Diamond-Grey-Seamless-Pattern-For-Website-Background.jpg);
+  background-color: #f2ece9;
   background-size: cover;
   border: 1px solid #949494;
   width: 85%;
@@ -25,11 +37,11 @@ body {
 
 
 .articleTitle{
-  font-family: "ff-ernestine-web-pro";
+  font-family: "venera";
   font-size: 30px;
   font-weight: bolder;
   text-align: left;
-  color:#941b64;
+  color: rgb(213, 47, 11);
   margin-bottom: 20px;
   margin-top: 18px;
 }
@@ -44,15 +56,15 @@ body {
 }
 
 .content {
-  font-family: "pragmatica",sans-serif;
-  font-size: 13px;
+  font-family: "Josefin sans", sans-serif;
+  font-size: 18px;
   padding: 0px 0px 10px 5px;
   display: block;
   color: #484849;
 }
 
 .author {
-  font-family: "ff-ernestine-web-pro" strong;
+  font-family: "Josefin sans";
   font-size: 12px;
   padding: 0px 0px 10px 5px;
   display: block;
@@ -65,11 +77,12 @@ ol {
   list-style: none;
 }
 .category {
-  font-family: "ff-ernestine-web-pro" strong;
-  font-size: 16px;
+  font-family: "Josefin sans";
+  font-weight: bold;
+  font-size: 18px;
   padding: 0px 0px 10px 5px;
   display: block;
-  color: #223388;
+  color: rgba(213, 47, 11, 0.);
 }
 
 .myBtns {
