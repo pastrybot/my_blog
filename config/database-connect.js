@@ -1,5 +1,11 @@
+const uriUtil  = require('mongodb-uri');
 var mongoose = require('mongoose');
 require('dotenv').config()
+
+const options = {
+server:  { socketOptions: { keepAlive: 1, connectTimeoutMS: 30000 } },
+replset: { socketOptions: { keepAlive: 1, connectTimeoutMS: 30000 } }
+};
 
 
 module.exports = () => {
@@ -7,7 +13,9 @@ module.exports = () => {
     mongoose.connect("mongodb://localhost/test-pt-blog");
     console.log("📁 📂 🗄 TEST DATABASE OPERATIONAL 🗄 📂 📁");
   } else {
-    mongoose.connect("mongodb://localhost/my_blog")
+    const mongodbUri = process.env.MONGODB_URI || "mongodb://localhost/test-pt-blog"
+    const mongooseUri = uriUtil.formatMongoose(mongodbUri);
+    mongoose.connect(mongooseUri, options);
     console.log("📁 📂 🗄 DEV DATABASE OPERATIONAL 🗄 📂 📁");
   }
 
