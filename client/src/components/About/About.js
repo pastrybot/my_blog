@@ -1,12 +1,25 @@
-import React from 'react'
+import React from 'react';
+import {peopleContainer, person} from './style.css'
 
 const About = (props) => {
   return (
     <div>
-      <h1> About me, or someone else. </h1>
-        <div>
-          <img src="http://i.imgur.com/613WTRK.jpg" alt="man with watermelon"/>
+      <div className={peopleContainer}>
+        <div className={person}><img src="http://i.imgur.com/613WTRK.jpg" alt="man with watermelon"/>
+          <p>Content here</p>
         </div>
+        <div className={person}><img src="http://i.imgur.com/613WTRK.jpg" alt="man with watermelon"/>
+            <p>Content here</p>
+        </div>
+        <div className={person}><img src="http://i.imgur.com/613WTRK.jpg" alt="man with watermelon"/>
+              <p>Content here</p>
+        </div>
+        <div className={person}><img src="http://i.imgur.com/613WTRK.jpg" alt="man with watermelon"/>
+                <p>Content here</p>
+        </div>
+      </div>
+
+
     </div>
   )
 }

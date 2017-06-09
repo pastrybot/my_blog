@@ -18,13 +18,15 @@
   display: flex;
   justify-content: space-around;
   align-items: left;
+  
 }
-.logo {
-    display: inline-block;
-    max-width: 50%;
+
+img {
+    display: flex;
+    width: auto;
     float: center;
     padding: 10px 0;
-    height: 20%;
+    height: 50%;
 }
 .nav ul {
   margin: 0;

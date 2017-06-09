@@ -8,50 +8,15 @@
   background: #777777;
   height: 500px;
   width: 900px;
+  padding-top: 100px;
   margin-left: auto;
   margin-right: auto;
   margin-top: 50px;
   border: 1px solid #979797;
 }
+.title{
 
-
-
-
-
-/* BSBF-Featurenew: */
-
-
-/* Feature Article: */
-font-family: AmericanTypewriter;
-font-size: 18px;
-color: #000000;
-
-
-/* Category: */
-font-family: .AppleSystemUIFont;
-font-size: 14px;
-color: #FD9D00;
-
-
-/* By Author: */
-font-family: .AppleSystemUIFont;
-font-size: 14px;
-color: #4D4D4D;
-
-
-/* Read More: */
-font-family: .AppleSystemUIFont;
-font-size: 14px;
-color: #4990E2;
-
-
-/* Comment: */
-font-family: .AppleSystemUIFont;
-font-size: 14px;
-color: #4990E2;
-
-
-/* Content: Lorem ipsum: */
-font-family: .AppleSystemUIFont;
-font-size: 14px;
-color: #363535;
+}
+.background {
+  background-color: rgba(36, 32, 31, 0.78);
+}

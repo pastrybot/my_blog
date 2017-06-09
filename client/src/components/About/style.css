@@ -1,0 +1,19 @@
+.peopleContainer {
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  margin-top: 100px;
+
+}
+.personContainer {
+  display: flex;
+  height: 150px;
+  width: 200px;
+}
+.person {
+  padding-top: 50px;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  flex-direction: row;
+}

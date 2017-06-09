@@ -23,6 +23,8 @@
     "morgan": "~1.7.0",
     "passport": "^0.3.2",
     "passport-local": "^1.0.0",
+    "react-parallax": "^1.4.1",
+    "react-simple-parallax": "^0.2.6",
     "serve-favicon": "~2.3.2"
   },
   "devDependencies": {
